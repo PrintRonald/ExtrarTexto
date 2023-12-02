@@ -2,7 +2,7 @@ import pytesseract
 from PIL import Image
 
 # Especifica la ruta de la imagen
-ruta_imagen = r'C:\Users\madar\Documents\GitHub\ExtrarTexto\Factura.jpeg'
+ruta_imagen = r'C:\Users\madar\Documents\GitHub\ExtrarTexto\0001.jpg'
 
 # Carga la imagen usando PIL (Python Imaging Library)
 imagen = Image.open(ruta_imagen)
@@ -12,3 +12,4 @@ texto_extraido = pytesseract.image_to_string(imagen)
 
 # Imprime el texto extraído
 print(texto_extraido)
+print(type(texto_extraido))
