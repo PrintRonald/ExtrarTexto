@@ -2,7 +2,7 @@ import pytesseract
 from PIL import Image
 
 # Especifica la ruta de la imagen
-ruta_imagen = r'C:\Users\madar\Documents\GitHub\ExtrarTexto\0001.jpg'
+ruta_imagen = r'C:\Users\madar\Documents\GitHub\ExtrarTexto\Imagen1.jpeg'
 
 # Carga la imagen usando PIL (Python Imaging Library)
 imagen = Image.open(ruta_imagen)
