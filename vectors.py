@@ -39,6 +39,12 @@ class Vector2D():
     def distance(v1, v2):
         return math.sqrt(((v1.x-v2.x)*(v1.x-v2.x))  + ((v1.y-v2.y)*(v1.y-v2.y)))
     
+    def extend_to_3D(self,z = 0):
+        x = self.x
+        y = self.y
+        z = z
+        return "({},{},{})".format(x, y, z)
+
 class Vector3D(Vector2D):
 
     def __init__(self,x,y,z):
@@ -80,10 +86,28 @@ class Vector3D(Vector2D):
     @staticmethod
     def distance(v1, v2):
         return math.sqrt(((v1.x-v2.x)*(v1.x-v2.x)) + ((v1.y-v2.y)*(v1.y-v2.y)) + ((v1.z-v2.z)*(v1.z-v2.z)))
+ 
+    @classmethod
+    def zero(cls):
+        x,y,z = 0,0,0
+        return cls(x,y,z)
+    
+    @classmethod
+    def horizontal(cls):
+        x,y,z = 1,0,0
+        return cls(x,y,z)
+    
+    @classmethod
+    def vertical(cls):
+        x,y,z = 0,1,0
+        return cls(x,y,z)
 
-    
-        
-    
+    @classmethod
+    def forward(cls):
+        x,y,z = 0,0,1
+        return cls(x,y,z)
+
+
     
 
 
