@@ -52,7 +52,7 @@ class Vector3D(Vector2D):
         self.z = z
     
     def __str__(self):
-        return "({},{},{})".format(self.x, self.y, self.z)
+        return super().__str__()[:-1] + ',{})'.format(self.z)
 
     @property
     def module(self):
@@ -61,8 +61,9 @@ class Vector3D(Vector2D):
         return square
 
     def scalar_prod(self, n=1):
-        x,y,z = n*self.x, n*self.y, n*self.z
-        return x,y,z
+        z = n*self.z
+        # Se destaca esta linea de codigo por el hecho de ahorrar codigo con el metodo super()
+        return str(super().scalar_prod())[:-1] + ', {})'.format(z) 
     
     @classmethod
     def sum(cls, v1, v2):
@@ -80,7 +81,8 @@ class Vector3D(Vector2D):
 
     @staticmethod
     def dot_product(v1, v2):
-        return (v1.x*v2.x) + (v1.y*v2.y) + (v1.z*v2.z)
+        #return (v1.x*v2.x) + (v1.y*v2.y) + (v1.z*v2.z)
+        return super().dot_product(v1,v2) + (v1.z*v2.z)
     
 
     @staticmethod
