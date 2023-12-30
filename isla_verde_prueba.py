@@ -17,7 +17,12 @@ from isla_verde import *
 #print(dead_tree(arbol2))
 
 
-Arbolato,Arboleto,Arbolito,Arboloto,Arboluto = Tree('Arbolato',5.0,2.0,True),Tree('Arboleto',4.0,1.0,True),Tree('Arbolito',5.0,1.5,True),Tree('Arboloto',5.0,0.5,False),Tree('Arboluto',2.0,0.25,False)
+#Arbolato,Arboleto,Arbolito,Arboloto,Arboluto = Tree('Arbolato',5.0,2.0,True),Tree('Arboleto',4.0,1.0,True),Tree('Arbolito',5.0,1.5,True),Tree('Arboloto',5.0,0.5,False),Tree('Arboluto',2.0,0.25,False)
+Arbolato = Tree('Arbolato',5.0,2.0,True)
+Arboleto = Tree('Arboleto',4.0,Arbolato.diameter/2,True)
+Arbolito = Tree('Arbolito',Arboleto.height,1.5,True)
+Arboloto = Tree('Arboloto',Arboleto.height,0.5,False)
+Arboluto = Tree('Arboluto',2.0,0.25,False)
 print('5 árboles nacen en esta isla')
 print(f'En mi lista de arboles hay {len(trees)} arboles')
 born_tree(Arbolato)
@@ -103,7 +108,7 @@ totalAlturaANP = 0.0
 for arbolNoParlante in ArbolNoParlanteList:
     totalAlturaANP += arbolNoParlante.height
 print(f'La suma de altura de los arboles NO parlantes es igual a: {totalAlturaANP}')
-Division = totalDiametroAP/totalAlturaANP
+Division = totalDiametroAP//totalAlturaANP
 print(f'{totalDiametroAP} dividido {totalAlturaANP} es igual a {Division}')
 #  a los resultados anteriores los debo multiplicar
 multiplicar = Diferencia * Division
@@ -113,8 +118,3 @@ longListaTrees = len(trees)/2
 print(f'La mitad de la longitud de la lista trees es igual a: {longListaTrees}')
 ResultadoFinal = multiplicar + longListaTrees
 print(f'El resultado final del acertijo es: {ResultadoFinal}')
-
-
-# El primer resultado me da 45.2
-
-# El segundo me da 28.599999999999998
